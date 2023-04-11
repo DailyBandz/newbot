@@ -58,7 +58,7 @@ BOOKS_BUTTON = {'text': 'Books 📚', 'callback_data': 'books'}
 TELEGRAM_BOT_TOKEN = '6131230287:AAENfl65uwbX2OYxtCEhehFwh8oYrQ3AdRE'
 
 # Define function to start the bot
-def start(update: Update, context: CallbackContext) -> None:
+def start(update: Update, context: telegram.ext.CallbackContext) -> None:
     """Send a message when the command /start is issued."""
     keyboard = [[InlineKeyboardButton(SCAN_CHAT_BUTTON['text'], callback_data=SCAN_CHAT_BUTTON['callback_data']),
                  InlineKeyboardButton(SHOW_TOTAL_BUTTON['text'], callback_data=SHOW_TOTAL_BUTTON['callback_data']),
@@ -218,7 +218,7 @@ def books(update: Update, context: CallbackContext) -> None:
     conn.close()
 
 # Define function to handle /help command
-def help_command(update: Update, context: CallbackContext) -> None:
+def help_command(update: Update, context: telegram.ext.CallbackContext) -> None:
     """Send a message when the command /help is issued."""
     update.message.reply_text('This is a bot to record transactions. To use, send the details of the transaction in the format:\n\n[Sender]\n[Amount]\n[Bank]\n[Receiver]\n[Reference]\n\nThe bot will then prompt you to confirm if you have received the payment or not. Use the buttons provided to confirm or deny.')
 
