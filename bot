@@ -6,7 +6,6 @@ from zipfile import ZipFile
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.constants import ParseMode
 from telegram.ext import Updater, CommandHandler, MessageHandler, CallbackQueryHandler, CallbackContext
-from telegram.ext import BaseFilter as MessageFilter
 
 
 
